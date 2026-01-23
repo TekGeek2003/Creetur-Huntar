@@ -97,12 +97,7 @@ def monster_importer(cols, rows, *path):
 				monster_dict[image_name][key] = [frame_dict[(col,row)] for col in range(cols)]
 	return monster_dict	
 
-# This method is a current problem cause it's not doing what I need it to do.
-# What it needs to do: When the monster reaches enough XP:
-# - Keep the background black
-# - create a white silhouette of the monster sprite
-# - Draw the silhouette slightly behind the monster
-# - silhouette should not replace the monster, only appear behind it.
+# Creates the selector for the current monster when it get's enough XP
 def outline_creator(frame_dict, padding=4):
 	outline_data = {}
 
