@@ -123,7 +123,7 @@ def outline_creator(frame_dict, padding=4):
 					unsetcolor=(0, 0, 0, 0)
 				)
 
-				# Blit black outlint by 1 pixel to create a solid border
+				# Blit black outline by 1 pixel to create a solid border
 				for x in range(-1, 2):
 					for y in range(-1, 2):
 						if x == 0 and y == 0:
