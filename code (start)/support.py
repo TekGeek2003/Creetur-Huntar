@@ -108,8 +108,12 @@ def outline_creator(frame_dict, padding=4):
 			outline_data[monster][state] = []
 
 			for frame in frames:
-				size = pygame.Vector2(frame.get_size()) + pygame.Vector2(padding * 2)
-				surf = pygame.Surface(size, pygame.SRCALPHA)
+				w, h = frame.get_size ()
+				surf = pygame.Surface(
+					(w + padding * 2, h + padding * 2),
+					pygame.SRCALPHA
+				)
+
 				mask = pygame.mask.from_surface(frame)
 
 				# White silhouette (inner shape)
@@ -118,20 +122,15 @@ def outline_creator(frame_dict, padding=4):
 					unsetcolor=(0, 0, 0, 0)
 				)
 
-				black_outline = mask.to_surface(
-					setcolor=(0, 0, 0, 255),
-					unsetcolor=(0, 0, 0, 0)
-				)
-
 				# Blit black outline by 1 pixel to create a solid border
-				for x in range(-1, 2):
-					for y in range(-1, 2):
-						if x == 0 and y == 0:
-							continue
+				for x in range(-padding, padding + 1):
+					for y in range(-padding, padding + 1):
 						surf.blit(white_sil, (padding + x, padding + y))
-						surf.blit(black_outline, (padding + y, padding + y))
+							
+						# Draw the original sprite ON TOP 
+						surf.blit(frame, (padding, padding))
 
-				outline_data[monster][state].append(surf)
+						outline_data[monster][state].append(surf)
 
 	return outline_data
 
