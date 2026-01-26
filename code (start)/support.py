@@ -131,7 +131,7 @@ def outline_creator(frame_dict, padding=4):
 						# Draw the original sprite ON TOP
 						surf.blit(frame, (padding, padding))
 
-						outline_data[monster][state].append(surf)
+					outline_data[monster][state].append(surf)
 
 	return outline_data
 
