@@ -118,7 +118,7 @@ def outline_creator(frame_dict, padding=4):
 
 				# White silhouette
 				white_sil = mask.to_surface(
-					setcolor=(255, 255, 255, 255),
+					setcolor=(0, 0, 0, 255),
 					unsetcolor=(0, 0, 0, 0)
 				)
 
