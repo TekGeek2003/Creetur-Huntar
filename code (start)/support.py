@@ -125,7 +125,7 @@ def outline_creator(frame_dict, padding=4):
 				# Blit background outline by 1 pixel to create a solid border
 				for x in range(-padding, padding + 1):
 					for y in range(-padding, padding + 1):
-						surf.blit(white_sil, (padding + x, padding + y))
+						surf.blit(white_sil, (padding, padding))
 
 						# Original sprite on top
 						surf.blit(frame, (padding, padding))
