@@ -27,18 +27,6 @@ class Monster:
 
     def __repr__(self):
         return f'monster: {self.name}, lvl: {self.level}'
-
-    #Save game system
-    def to_dict(self):
-        return {
-            'name': self.name,
-            'level': self.level,
-            'health': self.health,
-            'energy': self.energy,
-            'xp': self.xp,
-            'initiative': self.initiative,
-            'evolution': self.evolution,
-        }
         
     @classmethod
     def from_dict(cls, data):
